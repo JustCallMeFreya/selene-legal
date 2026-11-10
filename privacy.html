@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>Selene — Privacy Policy &amp; Terms of Service</title>
+    <style>
+      button, [role="button"], select, summary, input:not([type="checkbox"], [type="radio"]) { min-height: 2rem; }
+
+      :root {
+        --bg: #f6f5f1;
+        --surface: #ffffff;
+        --surface-2: #efede6;
+        --ink: #1c2230;
+        --ink-soft: #454e61;
+        --ink-faint: #6b7488;
+        --line: #ddd9cd;
+        --accent: #8a6d1f;
+        --accent-ink: #6f5614;
+        --accent-bg: #f4ecd4;
+        --moon: #2e3a55;
+        --toc-bg: #ffffff;
+        --shadow: 0 1px 2px rgba(28, 34, 48, .05), 0 10px 32px rgba(28, 34, 48, .06);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #10131c;
+          --surface: #171b28;
+          --surface-2: #1e2436;
+          --ink: #e9ebf2;
+          --ink-soft: #b9c0d1;
+          --ink-faint: #8b94a9;
+          --line: #2b3247;
+          --accent: #d9b45c;
+          --accent-ink: #e6c87a;
+          --accent-bg: #2a2517;
+          --moon: #aebadd;
+          --toc-bg: #171b28;
+          --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 32px rgba(0,0,0,.28);
+        }
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-size: 17px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
+      a:hover { text-decoration-thickness: 2px; }
+
+      .wrap {
+        max-width: 1060px;
+        margin: 0 auto;
+        padding: 0 20px 72px;
+      }
+
+      /* ---------- Header ---------- */
+      header.doc-head {
+        padding: 56px 0 34px;
+        border-bottom: 1px solid var(--line);
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 26px;
+      }
+      .brand svg { flex: none; }
+      .brand .brand-name {
+        font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+        font-size: 22px;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        color: var(--ink);
+      }
+      .brand .brand-sub {
+        display: block;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-size: 12.5px;
+        letter-spacing: .04em;
+        text-transform: none;
+        color: var(--ink-faint);
+        margin-top: 2px;
+      }
+      h1 {
+        font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+        font-weight: 600;
+        font-size: clamp(34px, 6vw, 50px);
+        line-height: 1.12;
+        margin: 0 0 14px;
+        letter-spacing: -.01em;
+      }
+      .lede {
+        font-size: 18.5px;
+        color: var(--ink-soft);
+        max-width: 62ch;
+        margin: 0 0 20px;
+      }
+      .meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 22px;
+        font-size: 14px;
+        color: var(--ink-faint);
+      }
+      .meta-row strong { color: var(--ink-soft); font-weight: 600; }
+
+      /* ---------- Short version ---------- */
+      .short-version {
+        background: var(--accent-bg);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 22px 24px;
+        margin: 30px 0 0;
+      }
+      .short-version h2 {
+        font-family: Georgia, "Iowan Old Style", serif;
+        font-size: 19px;
+        margin: 0 0 10px;
+        color: var(--ink);
+      }
+      .short-version ul { margin: 0; padding-left: 20px; }
+      .short-version li { margin: 6px 0; color: var(--ink); }
+      .short-version li::marker { color: var(--accent); }
+
+      /* ---------- Layout ---------- */
+      .layout {
+        display: grid;
+        grid-template-columns: 240px minmax(0, 1fr);
+        gap: 48px;
+        margin-top: 40px;
+        align-items: start;
+      }
+      nav.toc {
+        position: sticky;
+        top: 24px;
+        background: var(--toc-bg);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        padding: 18px 18px 12px;
+      }
+      nav.toc .toc-title {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        color: var(--ink-faint);
+        margin: 0 0 10px;
+      }
+      nav.toc ol { margin: 0; padding: 0; list-style: none; counter-reset: toc; }
+      nav.toc li { counter-increment: toc; }
+      nav.toc a {
+        display: flex;
+        gap: 10px;
+        align-items: baseline;
+        padding: 7px 6px;
+        min-height: 36px;
+        color: var(--ink-soft);
+        text-decoration: none;
+        font-size: 14.5px;
+        line-height: 1.4;
+        border-radius: 6px;
+      }
+      nav.toc a::before {
+        content: counter(toc, decimal-leading-zero);
+        font-size: 11.5px;
+        font-weight: 700;
+        color: var(--accent);
+        flex: none;
+      }
+      nav.toc a:hover { background: var(--surface-2); color: var(--ink); }
+
+      /* ---------- Sections ---------- */
+      section.policy {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        padding: 30px 34px;
+        margin-bottom: 22px;
+        scroll-margin-top: 20px;
+      }
+      section.policy h2 {
+        font-family: Georgia, "Iowan Old Style", serif;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1.25;
+        margin: 0 0 6px;
+        display: flex;
+        gap: 14px;
+        align-items: baseline;
+      }
+      section.policy h2 .num {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--accent);
+        letter-spacing: .06em;
+        flex: none;
+      }
+      section.policy p { margin: 12px 0; color: var(--ink-soft); }
+      section.policy p strong, section.policy li strong { color: var(--ink); }
+      section.policy ul { margin: 10px 0; padding-left: 22px; color: var(--ink-soft); }
+      section.policy li { margin: 7px 0; }
+      section.policy li::marker { color: var(--accent); }
+      code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: .88em;
+        background: var(--surface-2);
+        border: 1px solid var(--line);
+        border-radius: 5px;
+        padding: 1px 6px;
+        color: var(--ink);
+        white-space: nowrap;
+      }
+      .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0 6px;
+        font-size: 15.5px;
+      }
+      .data-table th, .data-table td {
+        text-align: left;
+        vertical-align: top;
+        padding: 11px 12px;
+        border-bottom: 1px solid var(--line);
+      }
+      .data-table thead th {
+        font-size: 12.5px;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: var(--ink-faint);
+        border-bottom: 2px solid var(--line);
+        padding-top: 0;
+      }
+      .data-table tbody tr:last-child td { border-bottom: none; }
+      .data-table td:first-child { font-weight: 600; color: var(--ink); width: 34%; }
+      .data-table td { color: var(--ink-soft); }
+      .callout {
+        background: var(--surface-2);
+        border-radius: 8px;
+        padding: 16px 18px;
+        margin: 16px 0 4px;
+        font-size: 16px;
+      }
+      .callout p { margin: 0; color: var(--ink); }
+
+      /* ---------- Doc switcher ---------- */
+      .doc-switch {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 26px;
+      }
+      .doc-switch a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 10px 20px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: var(--surface);
+        color: var(--ink);
+        font-weight: 600;
+        font-size: 15px;
+        text-decoration: none;
+        box-shadow: var(--shadow);
+      }
+      .doc-switch a:hover { border-color: var(--accent); color: var(--accent-ink); }
+      .doc-switch span.hint {
+        align-self: center;
+        font-size: 13.5px;
+        color: var(--ink-faint);
+      }
+      .terms-head {
+        padding: 46px 0 8px;
+        border-top: 2px solid var(--line);
+        margin-top: 56px;
+      }
+      .terms-head h2.doc-title {
+        font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+        font-weight: 600;
+        font-size: clamp(30px, 5vw, 42px);
+        line-height: 1.15;
+        margin: 0 0 12px;
+      }
+
+      footer.doc-foot {
+        border-top: 1px solid var(--line);
+        margin-top: 44px;
+        padding-top: 24px;
+        font-size: 14.5px;
+        color: var(--ink-faint);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 28px;
+        justify-content: space-between;
+      }
+
+      /* ---------- Mobile ---------- */
+      @media (max-width: 820px) {
+        .layout { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+        nav.toc { position: static; }
+        section.policy { padding: 24px 20px; }
+        header.doc-head { padding: 40px 0 28px; }
+        .data-table, .data-table tbody, .data-table tr, .data-table td { display: block; width: 100%; }
+        .data-table thead { display: none; }
+        .data-table tr { padding: 12px 0; border-bottom: 1px solid var(--line); }
+        .data-table tr:last-child { border-bottom: none; }
+        .data-table td { border-bottom: none; padding: 2px 0; }
+        .data-table td:first-child { width: 100%; padding-bottom: 4px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+
+      <header class="doc-head" id="privacy">
+        <div class="brand">
+          <svg width="40" height="40" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+            <path d="M33.5 5.5a19 19 0 1 0 9 24.6A21.5 21.5 0 0 1 33.5 5.5Z" fill="none" stroke="var(--moon)" stroke-width="2.6" stroke-linejoin="round"/>
+            <circle cx="34" cy="13" r="2.1" fill="var(--accent)"/>
+          </svg>
+          <span class="brand-name">Selene
+            <span class="brand-sub">Self-hosted Discord bot for Minecraft factions</span>
+          </span>
+        </div>
+        <h1>Privacy Policy</h1>
+        <p class="lede">Selene is software you run yourself, on your own computer, for your own Discord server. That one fact drives almost everything in this policy: the data Selene works with stays on the machine running it — it is not sent to the developer.</p>
+        <div class="meta-row">
+          <span><strong>Last updated:</strong> November 10, 2026</span>
+          <span><strong>Effective:</strong> November 10, 2026</span>
+          <span><strong>Applies to:</strong> Selene v1 (factions core)</span>
+        </div>
+
+        <div class="doc-switch">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms of Service</a>
+          <span class="hint">Both documents live on this page — paste this page's link, with <code>#terms</code> for the Terms field, into the Discord app form.</span>
+        </div>
+
+        <div class="short-version">
+          <h2>The short version</h2>
+          <ul>
+            <li><strong>Selene is self-hosted.</strong> Whoever buys it runs it on their own PC. Its database lives on that PC, in a local file.</li>
+            <li><strong>The developer receives nothing automatically.</strong> No telemetry, no analytics, no data phoning home — there is no developer server for Selene to send your data to.</li>
+            <li><strong>Your bot token never leaves your machine.</strong> It sits in a settings file only you control.</li>
+            <li><strong>The only data the developer ever sees</strong> is what you choose to send: a PayPal payment, or messages and files you voluntarily share when asking for support.</li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="layout">
+        <nav class="toc" aria-label="Contents">
+          <p class="toc-title">Contents</p>
+          <ol>
+            <li><a href="#who">Who runs what</a></li>
+            <li><a href="#local">Data stays on the operator's machine</a></li>
+            <li><a href="#processed">What Selene processes</a></li>
+            <li><a href="#developer">What the developer receives</a></li>
+            <li><a href="#tokens">Tokens &amp; account credentials</a></li>
+            <li><a href="#use">How the data is used</a></li>
+            <li><a href="#sharing">Sharing &amp; third parties</a></li>
+            <li><a href="#retention">Retention &amp; deletion</a></li>
+            <li><a href="#security">Security</a></li>
+            <li><a href="#children">Children</a></li>
+            <li><a href="#changes">Changes to this policy</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ol>
+        </nav>
+
+        <main>
+          <section class="policy" id="who">
+            <h2><span class="num">01</span> Who runs what</h2>
+            <p>Two roles matter in this policy, and they are usually different people:</p>
+            <ul>
+              <li><strong>The developer</strong> — the person who makes and sells Selene, and who provides support through the Selene support Discord server.</li>
+              <li><strong>The operator</strong> — the person who buys Selene, creates their own Discord application and bot account, and runs the software on their own computer for their faction's Discord server.</li>
+            </ul>
+            <p>Selene is not a hosted service. The developer does not run a copy of the bot for you, does not host your faction's data, and has no access to your Discord server, your bot, or your database. The operator is in control of their own instance at all times — including starting it, stopping it, and deleting its data.</p>
+            <p>Members of a Discord server where Selene runs are covered by this policy too: the sections below explain what the bot processes about them, and who actually holds it (the operator, not the developer).</p>
+          </section>
+
+          <section class="policy" id="local">
+            <h2><span class="num">02</span> Data stays on the operator's machine</h2>
+            <p>Everything Selene records is stored in a single local database file (<code>selene.db</code>) on the operator's computer, alongside the operator's settings file (<code>selene.env</code>). Selene has no cloud component, no developer-run backend, and no automatic reporting of any kind.</p>
+            <div class="callout">
+              <p>If Selene is running in your server, the data it holds about you is on the operator's PC — not with the developer. Questions about that data, including removal requests, go to the operator of that server.</p>
+            </div>
+          </section>
+
+          <section class="policy" id="processed">
+            <h2><span class="num">03</span> What Selene processes</h2>
+            <p>To do its job, the bot processes the following — all of it stored only in the operator's local database or settings:</p>
+            <table class="data-table">
+              <thead>
+                <tr><th scope="col">Data</th><th scope="col">Why Selene uses it</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Discord user IDs &amp; display names</td>
+                  <td>To know who ran a command, link members to roster entries, and credit kills, deaths, and other faction stats to the right person.</td>
+                </tr>
+                <tr>
+                  <td>Server &amp; channel IDs, and the operator's setup choices</td>
+                  <td>So the bot knows which server it serves and which channels its boards, logs, and mirrors post to. Set by the operator with <code>/setup</code>.</td>
+                </tr>
+                <tr>
+                  <td>Minecraft in-game names (IGNs) members provide</td>
+                  <td>To link a Discord member to their Minecraft account for roster and stats features, e.g. via the IGN-setting command.</td>
+                </tr>
+                <tr>
+                  <td>Faction data &amp; gameplay stats</td>
+                  <td>Rosters, faction-top values, kills and deaths, and similar faction records the bot maintains for the server's leaderboards and boards.</td>
+                </tr>
+                <tr>
+                  <td>Messages in channels the operator configures</td>
+                  <td>Where the operator turns on mirroring or logging features, the bot reads messages in those specific channels in order to repost or log them inside the same server. Selene does not read DMs, and does not read channels it hasn't been given access to and configured for.</td>
+                </tr>
+                <tr>
+                  <td>Commands used</td>
+                  <td>The content of slash commands run against the bot, so it can respond — for example a roster lookup or a top-list request.</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>Selene does not collect payment details, real names, addresses, or location data, and it does not build profiles of users across servers — each operator's instance only ever sees its own server.</p>
+          </section>
+
+          <section class="policy" id="developer">
+            <h2><span class="num">04</span> What the developer receives</h2>
+            <p>Automatically: <strong>nothing</strong>. A running copy of Selene sends no usage data, logs, or user information to the developer.</p>
+            <p>The developer only receives information in these situations, all of them initiated by you:</p>
+            <ul>
+              <li><strong>Buying Selene.</strong> Payment is handled by PayPal. The developer receives the payment confirmation PayPal provides — such as the buyer's name, email address, and the amount paid — so the purchase and download can be delivered. The developer never sees or stores card or bank details; PayPal's own privacy policy covers how PayPal handles them.</li>
+              <li><strong>Asking for support.</strong> Messages you post or send in the Selene support Discord are visible to the developer and support helpers, like any Discord conversation. If you share screenshots or log files to help diagnose a problem, the developer will see whatever is in them.</li>
+              <li><strong>Pilot and delivery messages.</strong> Contact details you use to receive your download (for example, the Discord account you open a ticket with) are used to deliver the software and the Buyer role.</li>
+            </ul>
+            <div class="callout">
+              <p>Before sending logs or screenshots for support, check them for anything private. In particular, never share your <code>selene.env</code> file or your bot token — support will never ask for them.</p>
+            </div>
+          </section>
+
+          <section class="policy" id="tokens">
+            <h2><span class="num">05</span> Tokens &amp; account credentials</h2>
+            <p>Selene runs under the operator's own Discord bot account. The bot token is stored in the <code>selene.env</code> settings file on the operator's machine. It is never transmitted to the developer, and Selene does not send it anywhere other than to Discord itself, to sign the bot in.</p>
+            <p>Some faction features use a Minecraft alt account that the operator supplies. Any credentials for that account are likewise stored only in the operator's local configuration. Supplying an alt is the operator's choice and the operator's responsibility — including the risk that the game server may ban the alt ("your alt, your ban risk"). The developer never receives, stores, or uses operators' alt credentials.</p>
+          </section>
+
+          <section class="policy" id="use">
+            <h2><span class="num">06</span> How the data is used</h2>
+            <p>Data processed by Selene is used only to provide the bot's features inside the operator's own server: rosters, leaderboards, faction boards, logs, mirrors, and command responses. It is not used for advertising, not used for marketing profiles, and not combined across different operators' servers.</p>
+            <p>Information the developer receives directly (payments and support messages) is used only to deliver Selene, provide support, and keep basic sales records.</p>
+          </section>
+
+          <section class="policy" id="sharing">
+            <h2><span class="num">07</span> Sharing &amp; third parties</h2>
+            <p><strong>The developer does not sell, rent, or share personal data with third parties</strong> — and in practice holds almost none, for the reasons above.</p>
+            <p>Selene's operation does involve services run by others, each under its own privacy policy:</p>
+            <ul>
+              <li><strong>Discord</strong> — the bot connects to Discord using the operator's bot account. Everything the bot sends or receives passes through Discord, as with any bot.</li>
+              <li><strong>PayPal</strong> — processes purchases of Selene.</li>
+              <li><strong>The Minecraft servers the operator connects to</strong> — gameplay data the bot reads or displays originates there, under those servers' own rules.</li>
+            </ul>
+            <p>Within a Discord server, what Selene posts (boards, logs, mirrors, leaderboards) is visible to whoever can see those channels. The operator chooses the channels and their permissions.</p>
+          </section>
+
+          <section class="policy" id="retention">
+            <h2><span class="num">08</span> Retention &amp; deletion</h2>
+            <p>Because the data lives with the operator, so does its retention:</p>
+            <ul>
+              <li>Data in an operator's instance stays in their <code>selene.db</code> until the operator removes it. Deleting that file deletes the bot's stored data for that server.</li>
+              <li>If you're a member of a server running Selene and want your linked IGN or stats removed, ask that server's operator — they are the one who can delete it. The developer cannot delete data from a machine they have no access to.</li>
+              <li>Uninstalling Selene and deleting its folder removes the software and its local data from the operator's machine entirely.</li>
+              <li>Payment records held by PayPal, and messages in the support Discord, are retained under those platforms' own policies and ordinary sales-record needs.</li>
+            </ul>
+          </section>
+
+          <section class="policy" id="security">
+            <h2><span class="num">09</span> Security</h2>
+            <p>Selene's design keeps data exposure small by keeping data local. Operators are responsible for securing their own machine and files — in particular, keeping their bot token private. Anyone holding a bot token controls that bot, so treat <code>selene.env</code> like a password: don't post it, don't send it to anyone (including anyone claiming to be support), and reset the token in the Discord Developer Portal if it's ever exposed.</p>
+            <p>No software can promise perfect security, and Selene is provided as-is; but no design decision in Selene sends operator or member data to the developer or any third party beyond the services listed in section 07.</p>
+          </section>
+
+          <section class="policy" id="children">
+            <h2><span class="num">10</span> Children</h2>
+            <p>Selene is sold to operators who are old enough to enter a purchase agreement, and it runs inside Discord, which sets its own minimum age for accounts. Selene does not knowingly collect information from children beyond what Discord itself provides to any bot in a server. Server operators are responsible for using Selene in line with Discord's terms for their community.</p>
+          </section>
+
+          <section class="policy" id="changes">
+            <h2><span class="num">11</span> Changes to this policy</h2>
+            <p>If Selene changes in a way that affects privacy — for example, a future version adding a feature that communicates with an outside service — this policy will be updated first, the "Last updated" date at the top will change, and the update will be announced in the Selene support Discord. The version of this policy posted at this link is the current one.</p>
+          </section>
+
+          <section class="policy" id="contact">
+            <h2><span class="num">12</span> Contact</h2>
+            <p>Questions about this policy, or about data the developer actually holds (payments and support messages), can be raised in the Selene support Discord:</p>
+            <p><a href="https://discord.gg/hMFGu5USjs">discord.gg/hMFGu5USjs</a> — open a ticket or ask in the support channels.</p>
+            <p>For data held by a specific server's copy of Selene, contact that server's operator instead — they're the only one with access to it.</p>
+          </section>
+        </main>
+      </div>
+
+      <!-- ================= TERMS OF SERVICE ================= -->
+      <div class="terms-head" id="terms">
+        <h2 class="doc-title">Terms of Service</h2>
+        <p class="lede">These terms cover buying, downloading, and using Selene. Buying Selene, or running it after receiving it as a pilot, means you agree to them.</p>
+        <div class="meta-row">
+          <span><strong>Last updated:</strong> November 10, 2026</span>
+          <span><strong>Effective:</strong> November 10, 2026</span>
+          <span><strong>Applies to:</strong> Selene v1 (factions core)</span>
+        </div>
+        <div class="short-version">
+          <h2>The short version</h2>
+          <ul>
+            <li><strong>$99 one-time</strong> per faction. The first 2 pilot factions are free. Map updates are <strong>$20 each</strong>.</li>
+            <li><strong>One purchase covers one faction's one Discord server.</strong> Don't share, redistribute, or resell the download.</li>
+            <li><strong>Your alt, your ban risk.</strong> If you connect a Minecraft alt account, what happens to it is on you.</li>
+            <li><strong>Sold as-is.</strong> No warranty; support is best-effort through the Selene support Discord.</li>
+            <li><strong>No refunds once the download link is delivered</strong> — unless Selene doesn't work and we can't fix it.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="layout">
+        <nav class="toc" aria-label="Terms contents">
+          <p class="toc-title">Terms — Contents</p>
+          <ol>
+            <li><a href="#t-what">What Selene is</a></li>
+            <li><a href="#t-price">Price &amp; payment</a></li>
+            <li><a href="#t-license">Your license</a></li>
+            <li><a href="#t-refunds">Refunds</a></li>
+            <li><a href="#t-updates">Updates</a></li>
+            <li><a href="#t-need">What you need &amp; your responsibilities</a></li>
+            <li><a href="#t-alt">Alt accounts &amp; ban risk</a></li>
+            <li><a href="#t-rules">Other platforms' rules</a></li>
+            <li><a href="#t-warranty">No warranty</a></li>
+            <li><a href="#t-liability">Liability</a></li>
+            <li><a href="#t-support">Support</a></li>
+            <li><a href="#t-changes">Changes &amp; contact</a></li>
+          </ol>
+        </nav>
+
+        <main>
+          <section class="policy" id="t-what">
+            <h2><span class="num">T1</span> What Selene is</h2>
+            <p>Selene is self-hosted Discord bot software for Minecraft factions, sold as a one-time download (an executable plus its supporting files). You run it yourself: you create your own Discord application and bot account, fill in your own settings, and start it on your own computer. Selene v1 covers the factions-core feature set.</p>
+            <p>The developer does not host Selene for you and does not operate your bot. How your instance is configured and what it does in your server is under your control.</p>
+          </section>
+
+          <section class="policy" id="t-price">
+            <h2><span class="num">T2</span> Price &amp; payment</h2>
+            <ul>
+              <li><strong>Price: $99 USD, one-time, per faction.</strong> There is no subscription.</li>
+              <li><strong>Pilots:</strong> the first 2 pilot factions receive Selene free. Pilot access can be ended if these terms are broken.</li>
+              <li><strong>Map updates: $20 each</strong> — see section T5.</li>
+              <li><strong>Payment is through PayPal</strong> (which also offers card and other checkout options on its page). Your purchase is delivered after payment confirms: you receive the download and the Buyer role in the Selene support Discord.</li>
+            </ul>
+          </section>
+
+          <section class="policy" id="t-license">
+            <h2><span class="num">T3</span> Your license</h2>
+            <p>Paying for Selene gives you a personal, non-transferable license to run <strong>one copy of Selene for one faction, in one Discord server</strong>. Under that license you may not:</p>
+            <ul>
+              <li>Share, redistribute, re-upload, or resell the download, the download link, or the software itself.</li>
+              <li>Run the same purchase for a second faction or a second server — that needs its own purchase.</li>
+              <li>Present Selene as your own product, or remove its branding and claim authorship.</li>
+            </ul>
+            <p>Breaking these rules can end your license and your access to updates and support, without a refund.</p>
+          </section>
+
+          <section class="policy" id="t-refunds">
+            <h2><span class="num">T4</span> Refunds</h2>
+            <div class="callout">
+              <p><strong>No refunds once the download link is delivered — unless Selene doesn't work and we can't fix it.</strong></p>
+            </div>
+            <p>Selene is a digital download; once you've received it, it can't be returned. If Selene genuinely fails to run on a machine that meets the setup requirements, contact support first and give us a fair chance to fix it. If we can't get it working, you'll be refunded. Problems caused by your own environment — a mistyped settings file, a revoked bot token, a banned alt, a game server changing its rules — aren't grounds for a refund, though support will still try to help.</p>
+          </section>
+
+          <section class="policy" id="t-updates">
+            <h2><span class="num">T5</span> Updates</h2>
+            <p>Your purchase covers Selene v1 as delivered, including ordinary bug-fix builds of that version. When the Minecraft servers Selene supports change maps in ways that need Selene adjusted, an updated build is offered as a <strong>map update at $20 per update</strong>. Map updates are optional: your existing build keeps working as it is, it just won't be adapted to a new map until you buy that update.</p>
+          </section>
+
+          <section class="policy" id="t-need">
+            <h2><span class="num">T6</span> What you need &amp; your responsibilities</h2>
+            <ul>
+              <li>A computer that can run Selene while you want the bot online — the bot is only online while your machine is running it.</li>
+              <li>Your own Discord application and bot token, created in the Discord Developer Portal. Keep your token secret; anyone holding it controls your bot.</li>
+              <li>Accurate setup: you are responsible for your settings file and for the channels and permissions you give the bot in your server.</li>
+              <li>Backups of your own files, including your local Selene database, are your responsibility.</li>
+            </ul>
+          </section>
+
+          <section class="policy" id="t-alt">
+            <h2><span class="num">T7</span> Alt accounts &amp; ban risk</h2>
+            <p>Some Selene features use a Minecraft alt account that <strong>you</strong> provide. The developer does not supply alt accounts. Using an alt with any bot or connector can break a game server's rules, and enforcement is entirely that server's call.</p>
+            <div class="callout">
+              <p><strong>Your alt, your ban risk.</strong> The developer is not responsible for bans, punishments, lost items, or lost faction standing that result from using Selene or an alt account on any Minecraft server.</p>
+            </div>
+          </section>
+
+          <section class="policy" id="t-rules">
+            <h2><span class="num">T8</span> Other platforms' rules</h2>
+            <p>Using Selene doesn't exempt you from anyone else's rules. You agree to use Selene in line with Discord's Terms of Service and Developer Terms, and with the rules of any Minecraft server you connect it to. If a platform removes your bot, app, or account for how you used it, that's between you and that platform.</p>
+          </section>
+
+          <section class="policy" id="t-warranty">
+            <h2><span class="num">T9</span> No warranty</h2>
+            <p>Selene is provided <strong>"as is," without any warranty</strong> — express or implied, including fitness for a particular purpose. Minecraft servers, Discord, and the game itself all change without notice, and any of those changes can break features until a fix or a map update is available. No uptime or availability is guaranteed, because the bot runs on your own machine in the first place.</p>
+          </section>
+
+          <section class="policy" id="t-liability">
+            <h2><span class="num">T10</span> Liability</h2>
+            <p>To the fullest extent allowed by law, the developer's total liability for anything arising from Selene is limited to the amount you paid for it. The developer is not liable for indirect or knock-on losses — including lost game items, faction value, server standing, or data stored in your local copy of Selene.</p>
+          </section>
+
+          <section class="policy" id="t-support">
+            <h2><span class="num">T11</span> Support</h2>
+            <p>Support is provided on a <strong>best-effort basis</strong> through the Selene support Discord (<a href="https://discord.gg/hMFGu5USjs">discord.gg/hMFGu5USjs</a>) — setup help, troubleshooting, and bug reports. There is no guaranteed response time. Support never needs, and will never ask for, your bot token or your <code>selene.env</code> file.</p>
+          </section>
+
+          <section class="policy" id="t-changes">
+            <h2><span class="num">T12</span> Changes &amp; contact</h2>
+            <p>These terms may be updated; the version posted at this link, with its "Last updated" date, is the current one, and material changes will be announced in the Selene support Discord. Changes don't retroactively alter a purchase already made. Questions about these terms: ask in the support Discord, <a href="https://discord.gg/hMFGu5USjs">discord.gg/hMFGu5USjs</a>.</p>
+          </section>
+        </main>
+      </div>
+
+      <footer class="doc-foot">
+        <span>Selene — self-hosted Discord bot software for Minecraft factions.</span>
+        <span>Privacy Policy &amp; Terms of Service · Last updated November 10, 2026</span>
+      </footer>
+    </div>
+  </body>
+</html>

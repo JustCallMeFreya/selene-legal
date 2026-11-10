@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>Selene — Terms of Service</title>
+<style>
+  :root{
+    --bg:#f7f7f5;
+    --surface:#ffffff;
+    --surface-2:#f0efe9;
+    --ink:#17181c;
+    --ink-2:#3d3f47;
+    --muted:#6b6e7a;
+    --line:#e2e1db;
+    --accent:#8a6d2b;
+    --accent-bg:#fdf6e0;
+    --accent-ink:#5c4a1a;
+    --warning-bg:#fff4e5;
+    --warning-line:#e8c99a;
+    --warning-ink:#6b4a12;
+    --radius:14px;
+    --radius-sm:10px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0e0f13;
+      --surface:#17181e;
+      --surface-2:#1e1f27;
+      --ink:#eceef2;
+      --ink-2:#c8cbd3;
+      --muted:#9a9eac;
+      --line:#2a2b35;
+      --accent:#d6b25e;
+      --accent-bg:#242012;
+      --accent-ink:#e8d5a3;
+      --warning-bg:#2a1f0e;
+      --warning-line:#5a4520;
+      --warning-ink:#e8c99a;
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family: ui-sans-system, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent); text-decoration:underline; text-underline-offset:3px}
+  a:hover{opacity:.85}
+  button, [role="button"], select, summary, input:not([type="checkbox"],[type="radio"]){min-height:2.25rem}
+
+  .wrap{max-width:1120px; margin:0 auto; padding:0 20px 64px}
+
+  /* Header */
+  .top{
+    padding:36px 0 8px;
+  }
+  .eyebrow{
+    display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+    font-size:13px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; color:var(--muted);
+  }
+  .eyebrow .moon{
+    width:36px; height:36px; border-radius:50%;
+    background:var(--ink); color:var(--bg);
+    display:grid; place-items:center; font-size:18px; flex:0 0 auto;
+  }
+  h1{
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight:600; letter-spacing:-.02em;
+    font-size:clamp(38px, 6vw, 58px);
+    line-height:.95; margin:18px 0 14px;
+  }
+  h1 span{ display:block; font-size:.52em; font-weight:400; letter-spacing:-.01em; color:var(--muted); margin-top:8px; line-height:1.2}
+  .meta{
+    display:flex; flex-wrap:wrap; gap:8px 16px; color:var(--muted); font-size:14px; margin-top:6px;
+  }
+  .meta strong{color:var(--ink-2); font-weight:600}
+
+  .summary{
+    margin-top:28px;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:22px 22px 18px;
+    display:grid; grid-template-columns:1.15fr .85fr; gap:22px;
+  }
+  @media (max-width:760px){ .summary{grid-template-columns:1fr} }
+  .summary h2{font-size:15px; letter-spacing:.06em; text-transform:uppercase; margin:0 0 10px; color:var(--accent)}
+  .summary p{margin:0; color:var(--ink-2); font-size:15.5px}
+  .summary ul{margin:10px 0 0; padding-left:18px; color:var(--ink-2); font-size:15px}
+  .summary li{margin:4px 0}
+  .pricebox{
+    background:var(--surface-2); border-radius:12px; padding:16px;
+  }
+  .pricebox .price{font-family:Georgia, serif; font-size:36px; line-height:1; font-weight:700}
+  .pricebox .sub{font-size:13px; color:var(--muted); margin-top:4px}
+  .pricebox dl{margin:14px 0 0; display:grid; grid-template-columns:auto 1fr; gap:6px 12px; font-size:14px}
+  .pricebox dt{color:var(--muted)} .pricebox dd{margin:0; font-weight:600; text-align:right}
+
+  /* Layout */
+  .layout{display:grid; grid-template-columns:260px 1fr; gap:28px; margin-top:28px; align-items:start}
+  @media (max-width:860px){ .layout{grid-template-columns:1fr} }
+
+  nav.toc{
+    position:sticky; top:18px;
+    background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:16px;
+  }
+  @media (max-width:860px){ nav.toc{position:static} }
+  nav.toc h3{margin:0 0 10px; font-size:13px; letter-spacing:.07em; text-transform:uppercase; color:var(--muted)}
+  nav.toc ol{margin:0; padding:0; list-style:none; counter-reset:toc}
+  nav.toc li{counter-increment:toc}
+  nav.toc a{
+    display:flex; gap:10px; align-items:baseline;
+    padding:9px 8px; border-radius:8px; color:var(--ink-2); text-decoration:none; font-size:14px; line-height:1.35; min-height:36px;
+  }
+  nav.toc a::before{content:counter(toc, decimal-leading-zero); font-size:11px; font-weight:700; color:var(--muted); letter-spacing:.04em}
+  nav.toc a:hover{background:var(--surface-2); color:var(--ink)}
+
+  article{
+    background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:8px 28px 28px;
+    min-width:0;
+  }
+  @media (max-width:560px){ article{padding:4px 18px 22px} }
+
+  section{padding:26px 0 6px; border-bottom:1px solid var(--line)}
+  section:last-of-type{border-bottom:none}
+  section h2{
+    font-family:Georgia, serif; font-size:24px; line-height:1.15; letter-spacing:-.01em; margin:0 0 6px;
+    display:flex; gap:12px; align-items:baseline;
+  }
+  section h2 .num{
+    font-family: ui-sans-system, sans-serif; font-size:12px; font-weight:800; letter-spacing:.06em;
+    color:var(--accent); background:var(--accent-bg); border:1px solid var(--line);
+    padding:4px 7px; border-radius:999px; transform:translateY(-2px); flex:0 0 auto;
+  }
+  section h3{font-size:16px; margin:18px 0 6px}
+  section p, section li{color:var(--ink-2); font-size:15.5px}
+  section p{margin:8px 0}
+  section ul, section ol{margin:8px 0 8px 18px; padding:0}
+  section li{margin:5px 0; padding-left:4px}
+  section li::marker{color:var(--muted)}
+  strong{color:var(--ink)}
+
+  .callout{
+    border-radius:12px; padding:16px 16px 14px; margin:16px 0; border:1px solid var(--line); background:var(--surface-2);
+  }
+  .callout p{margin:0; font-size:15px}
+  .callout .label{font-size:12px; letter-spacing:.07em; text-transform:uppercase; font-weight:800; margin-bottom:6px}
+  .callout.warn{background:var(--warning-bg); border-color:var(--warning-line); color:var(--warning-ink)}
+  .callout.warn p{color:var(--warning-ink)}
+  .callout.warn .label{color:var(--warning-ink)}
+  .callout.gold{background:var(--accent-bg); border-color:var(--line)}
+  .callout.gold p{color:var(--accent-ink)}
+
+  .defs{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:14px 0}
+  @media (max-width:640px){ .defs{grid-template-columns:1fr} }
+  .def{border:1px solid var(--line); border-radius:12px; padding:14px}
+  .def dt{font-weight:700; font-size:14px}
+  .def dd{margin:4px 0 0; color:var(--ink-2); font-size:14.5px}
+
+  .footer{
+    margin-top:22px; display:grid; grid-template-columns:1fr 1fr; gap:16px;
+  }
+  @media (max-width:640px){ .footer{grid-template-columns:1fr} }
+  .card{ background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:18px}
+  .card h3{margin:0 0 6px; font-size:15px}
+  .card p{margin:0; color:var(--muted); font-size:14.5px}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    margin-top:12px; padding:10px 14px; min-height:44px; border-radius:999px;
+    background:var(--ink); color:var(--bg); text-decoration:none; font-weight:700; font-size:14px; border:1px solid var(--ink);
+  }
+  .btn.secondary{background:transparent; color:var(--ink)}
+  .small{font-size:13px; color:var(--muted); text-align:center; margin:22px 0 0; line-height:1.6}
+  @media print{
+    nav.toc{display:none} .layout{grid-template-columns:1fr} body{background:#fff} article, .summary, .card{border-color:#ddd}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="eyebrow"><span class="moon" aria-hidden="true">☾</span> Selene &nbsp;·&nbsp; Self-hosted Factions Bot</div>
+    <h1>Terms of Service <span>For Selene v1 — the self-hosted Discord bot for Minecraft Factions.</span></h1>
+    <div class="meta">
+      <span><strong>Last updated:</strong> November 10, 2026</span>
+      <span><strong>Effective:</strong> November 10, 2026</span>
+      <span><strong>Version:</strong> 1.0</span>
+    </div>
+
+    <div class="summary" aria-label="Plain English summary">
+      <div>
+        <h2>The short version</h2>
+        <p>Selene is software you run yourself. You pay once, you get the download, and you host it on your own machine for your faction. These Terms are the full agreement — the summary below doesn&rsquo;t replace them.</p>
+        <ul>
+          <li><strong>One faction, one license.</strong> Don&rsquo;t share, resell, or redistribute the files.</li>
+          <li><strong>You run it, you&rsquo;re responsible for it</strong> — your Discord bot, your hosting, your Minecraft alt, and how you use it on any server.</li>
+          <li><strong>Alt / connector use is at your own risk.</strong> If a server bans an alt, that&rsquo;s on you.</li>
+          <li><strong>Map updates are separate</strong> — $20 per map update when a new map needs bot changes. Bug fixes for your current map aren&rsquo;t charged as a map update.</li>
+          <li><strong>Support is through the Selene Discord</strong> — best-effort help, setup guides, and bug fixes for v1.</li>
+        </ul>
+      </div>
+      <div class="pricebox" aria-label="Product snapshot">
+        <div class="price">$99</div>
+        <div class="sub">One-time payment · Per faction · No subscription</div>
+        <dl>
+          <dt>Product</dt><dd>Selene v1 (Factions Core)</dd>
+          <dt>Delivery</dt><dd>Digital download</dd>
+          <dt>Payment</dt><dd>PayPal</dd>
+          <dt>Hosting</dt><dd>Self-hosted by you</dd>
+          <dt>Map updates</dt><dd>$20 each</dd>
+          <dt>Pilots</dt><dd>First 2 free*</dd>
+        </dl>
+        <p style="margin:10px 0 0; font-size:12.5px; color:var(--muted)">* Pilot terms are in §5. Pilot access is limited and may have different support / update terms communicated at acceptance.</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="toc" aria-label="Contents">
+      <h3>Contents</h3>
+      <ol>
+        <li><a href="#s1">Agreement to these Terms</a></li>
+        <li><a href="#s2">What Selene is</a></li>
+        <li><a href="#s3">License</a></li>
+        <li><a href="#s4">Purchase &amp; payment</a></li>
+        <li><a href="#s5">Pilot program</a></li>
+        <li><a href="#s6">Running Selene — your responsibilities</a></li>
+        <li><a href="#s7">Third-party services</a></li>
+        <li><a href="#s8">Alt &amp; connector accounts</a></li>
+        <li><a href="#s9">Acceptable use</a></li>
+        <li><a href="#s10">Your server, your data</a></li>
+        <li><a href="#s11">Updates &amp; support</a></li>
+        <li><a href="#s12">Refunds</a></li>
+        <li><a href="#s13">Warranty disclaimer</a></li>
+        <li><a href="#s14">Limitation of liability</a></li>
+        <li><a href="#s15">Termination</a></li>
+        <li><a href="#s16">Changes, governing law &amp; other terms</a></li>
+        <li><a href="#s17">Contact</a></li>
+      </ol>
+    </nav>
+
+    <article>
+      <section id="s1">
+        <h2><span class="num">01</span> Agreement to these Terms</h2>
+        <p>These Terms of Service (&ldquo;<strong>Terms</strong>&rdquo;) are an agreement between you (&ldquo;<strong>you</strong>,&rdquo; &ldquo;<strong>Buyer</strong>,&rdquo; or &ldquo;<strong>Licensee</strong>&rdquo;) and the seller of Selene (&ldquo;<strong>we</strong>,&rdquo; &ldquo;<strong>us</strong>,&rdquo; or &ldquo;<strong>Selene</strong>&rdquo;) for the Selene software, documentation, and related files (collectively, the &ldquo;<strong>Software</strong>&rdquo;).</p>
+        <p>By purchasing, downloading, installing, or using Selene — including as a pilot user — you agree to these Terms. If you don&rsquo;t agree, don&rsquo;t download or use the Software and contact us before installation.</p>
+        <p>You must be at least 18 years old, or have permission from a parent or legal guardian who agrees to these Terms on your behalf, to purchase Selene. If you&rsquo;re buying on behalf of a faction, group, or server, you confirm you have authority to bind that group to these Terms for that purchase.</p>
+      </section>
+
+      <section id="s2">
+        <h2><span class="num">02</span> What Selene is</h2>
+        <p>Selene v1 is a <strong>self-hosted Discord bot for Minecraft Factions communities</strong>. The v1 release is &ldquo;Factions Core&rdquo; only. Features for other games or modes are <strong>not included in v1</strong> and are not promised as part of your purchase unless we state otherwise in writing for your order.</p>
+        <p>Depending on build and configuration, Factions Core may include faction roster management, FTop / value tracking, PvP leaderboards, faction logs and mirrors, market / buy-list tools, and related Discord commands and boards. The exact command list and features are those in the version delivered to you and described in the setup guide provided with it.</p>
+        <dl class="defs">
+          <div class="def"><dt>Self-hosted means</dt><dd>You run <code>Selene.exe</code> (and its sidecar files) on a machine you control. We don&rsquo;t host your bot instance for you.</dd></div>
+          <div class="def"><dt>Your data stays local</dt><dd>Selene v1 stores its data in a local SQLite database (<code>selene.db</code>) on your machine. See §10.</dd></div>
+        </dl>
+        <p>Selene is <strong>not affiliated with, endorsed by, or sponsored by</strong> Mojang, Microsoft, Minecraft, Discord Inc., or any Minecraft server network (including Complex, InsanityCraft, or Advancius). All trademarks belong to their owners.</p>
+      </section>
+
+      <section id="s3">
+        <h2><span class="num">03</span> License</h2>
+        <p>Subject to these Terms and payment (or pilot acceptance), we grant you a <strong>non-exclusive, non-transferable, revocable license</strong> to:</p>
+        <ul>
+          <li>Download, install, and run one (1) instance of Selene for <strong>one (1) faction</strong> — the faction identified at purchase / in your support ticket;</li>
+          <li>Use Selene in one (1) primary Discord server for that faction, plus reasonable test / private setup servers you control for configuring that same faction;</li>
+          <li>Make one (1) backup copy of the delivered files for archival / reinstall purposes for that same faction.</li>
+        </ul>
+        <h3>You may not</h3>
+        <ul>
+          <li>Share, leak, upload, resell, rent, sublicense, or redistribute Selene, its executable, sidecar files, database template, documentation, or download links — in whole or in part — to anyone who hasn&rsquo;t purchased their own license;</li>
+          <li>Run a single license for multiple unrelated factions, or sell / give access to your running instance as a service to other factions;</li>
+          <li>Reverse engineer, decompile, or attempt to extract source code from the Software, except where that restriction is prohibited by applicable law;</li>
+          <li>Remove, alter, or obscure copyright, branding, or license notices in the Software or documentation;</li>
+          <li>Use Selene to violate the terms, rules, or policies of Discord, Minecraft, Mojang / Microsoft, or any Minecraft server you connect to (see §7 and §9).</li>
+        </ul>
+        <p>We retain all ownership and intellectual property rights in Selene. Your license is to <em>use</em> the Software — it does not transfer ownership of the Software to you. Feedback or suggestions you send us may be used by us without obligation or payment.</p>
+        <div class="callout gold"><p><span class="label">Need a second faction?</span>Each additional faction needs its own license. Open a ticket in the Selene Discord before running a second copy for a different faction.</p></div>
+      </section>
+
+      <section id="s4">
+        <h2><span class="num">04</span> Purchase &amp; payment</h2>
+        <ul>
+          <li><strong>Price:</strong> $99 USD, one-time, per faction license, unless a different price is clearly stated at checkout for your order (for example, an accepted free pilot). <strong>Map / season updates are not included in the $99 price</strong> — when a new map or season requires changes to Selene to keep working, that update is <strong>$20 USD per map update</strong>, charged separately (see §11).</li>
+          <li><strong>Payment method:</strong> PayPal (Goods &amp; Services) via the official payment link / checkout provided in the Selene Discord <strong>#buy-selene</strong> channel or directly by us. Don&rsquo;t send payment to an unofficial link or person claiming to resell Selene.</li>
+          <li><strong>Taxes &amp; fees:</strong> PayPal or your payment provider may apply its own fees, currency conversion, or taxes. The listed price is the amount due to us for the license.</li>
+          <li><strong>Delivery:</strong> After payment is confirmed, you open a ticket in the Selene Support Discord with your receipt / transaction details. Once verified, you&rsquo;ll receive the Buyer role (where applicable) and a download for the current v1 package — <code>Selene.exe</code>, required sidecar files, an empty starter database, <code>.env.example</code> / config template, and launch / setup files.</li>
+          <li><strong>Download links expire.</strong> Download promptly and keep your own backup under §3. If your link expires before you download, contact support and we&rsquo;ll re-issue it to the verified buyer.</li>
+          <li><strong>Chargebacks:</strong> Filing a chargeback or payment dispute for a delivered, working license without first contacting support to resolve the issue is a breach of these Terms and may result in license termination under §15.</li>
+        </ul>
+        <p>We may change the price for <em>future</em> purchases at any time. A price change does not affect a license you&rsquo;ve already paid for.</p>
+      </section>
+
+      <section id="s5">
+        <h2><span class="num">05</span> Pilot program</h2>
+        <p>From time to time we may offer a limited number of <strong>free pilot licenses</strong> (at launch, the first 2 pilots). Pilot access:</p>
+        <ul>
+          <li>Is granted at our discretion, may be waitlisted, and is not guaranteed by paying or joining the Discord;</li>
+          <li>Covers the same v1 Factions Core Software, subject to all license restrictions in §3;</li>
+          <li>May be time-limited, feature-limited, or subject to feedback / testing requests communicated when you&rsquo;re accepted;</li>
+          <li>May be revoked if these Terms are breached or the pilot ends, with reasonable notice where practical.</li>
+        </ul>
+        <p>If you later buy a paid license for the same faction, the paid license replaces your pilot license for that faction going forward.</p>
+      </section>
+
+      <section id="s6">
+        <h2><span class="num">06</span> Running Selene — your responsibilities</h2>
+        <p>Because Selene is self-hosted, you are responsible for everything needed to run it, including:</p>
+        <ul>
+          <li><strong>A computer / host</strong> that meets the requirements in the setup guide (Windows for the packaged <code>.exe</code> build) and stays online when you want the bot online;</li>
+          <li><strong>Your own Discord bot application and token.</strong> You create the bot in the Discord Developer Portal, invite it to your server with the permissions in the guide, and keep its token secret. <strong>Never share your bot token publicly or send it to anyone claiming to be support who asks for it in DMs outside a verified support ticket process.</strong> If your token leaks, reset it in the Developer Portal — you&rsquo;re responsible for activity under your bot;</li>
+          <li><strong>Correct configuration</strong> — including renaming / configuring your environment file exactly as the guide states (for example, a file named exactly <code>selene.env</code> where the guide requires it, not <code>.env.example</code> or <code>.env.txt</code>), running the command-deploy step (<code>.\Selene.exe --deploy-commands</code>) in the order the guide specifies, and completing <code>/setup</code> in your Discord server;</li>
+          <li><strong>Backups.</strong> Back up your <code>selene.db</code>, config, and <code>.env</code> files. We are not responsible for data loss on your machine;</li>
+          <li><strong>Updates &amp; security</strong> for your operating system, network, and any Minecraft accounts you use with Selene;</li>
+          <li><strong>Compliance</strong> with the rules of every Discord server and Minecraft server where you use Selene.</li>
+        </ul>
+        <p>If you get stuck, follow the current setup guide in the Selene Discord first, then open a support ticket with what you tried and any error messages (redacting tokens and passwords).</p>
+      </section>
+
+      <section id="s7">
+        <h2><span class="num">07</span> Third-party services</h2>
+        <p>Selene interacts with services we don&rsquo;t control:</p>
+        <ul>
+          <li><strong>Discord</strong> — subject to Discord&rsquo;s Terms of Service and Developer Terms / Policy;</li>
+          <li><strong>Minecraft &amp; Mojang / Microsoft</strong> — subject to the Minecraft EULA and Usage Guidelines;</li>
+          <li><strong>Minecraft server networks</strong> (e.g., the Factions server you play on) — subject to that server&rsquo;s own rules, which may restrict bots, alts, automation, AFK behaviour, or data scraping;</li>
+          <li><strong>PayPal</strong> — for payment processing, subject to PayPal&rsquo;s terms.</li>
+        </ul>
+        <p>We are not responsible if a third party changes its API, rules, or access in a way that breaks or limits a Selene feature, bans an account, or makes a feature unavailable. Where practical we&rsquo;ll try to update v1 for material breaking changes (see §11), but we don&rsquo;t guarantee compatibility with every future third-party change or every Minecraft server.</p>
+      </section>
+
+      <section id="s8">
+        <h2><span class="num">08</span> Alt &amp; connector accounts — your alt, your risk</h2>
+        <div class="callout warn">
+          <p><span class="label">⚠ Read this before using any connector / alt feature</span>
+          Some Selene features use a Minecraft alt / connector account <em>you</em> provide to observe or interact with a Factions server (for example, FTop scans or chat / log mirroring). <strong>Your alt, your ban risk.</strong></p>
+        </div>
+        <ul>
+          <li>You must own or have permission to use any Minecraft account you provide. Budget for that account separately — <strong>the $99 Selene price does not include a Minecraft account / alt.</strong></li>
+          <li>You understand that some Minecraft servers prohibit or restrict alts, bots, automation, or AFK use, and may ban, mute, wipe, or otherwise punish accounts or factions that use them — including your main account or faction, depending on that server&rsquo;s rules.</li>
+          <li>We do not control those decisions and <strong>we are not liable for any ban, suspension, wipe, loss of items / value, or other enforcement action</strong> taken by a Minecraft server, Mojang / Microsoft, or Discord in connection with your use of Selene.</li>
+          <li>Don&rsquo;t use Selene&rsquo;s connector features on a server where that use would break that server&rsquo;s rules. If you&rsquo;re unsure, ask that server&rsquo;s staff first.</li>
+        </ul>
+      </section>
+
+      <section id="s9">
+        <h2><span class="num">09</span> Acceptable use</h2>
+        <p>You agree not to use Selene to:</p>
+        <ul>
+          <li>Break any law, or infringe anyone&rsquo;s rights;</li>
+          <li>Harass, spam, raid, or disrupt Discord servers or Minecraft servers, or automate abusive behaviour (including ban evasion);</li>
+          <li>Cheat in a way that violates the target server&rsquo;s rules — for example, using automation the server prohibits to gain an unfair advantage;</li>
+          <li>Collect or expose other people&rsquo;s personal data without a lawful basis and, where needed, their consent;</li>
+          <li>Distribute malware, attempt to gain unauthorised access to systems, or interfere with Selene licensing or payment verification;</li>
+          <li>Impersonate Selene, us, or support staff, or resell Selene under another name.</li>
+        </ul>
+        <p>You are responsible for how members of your faction / Discord use your Selene instance and its commands.</p>
+      </section>
+
+      <section id="s10">
+        <h2><span class="num">10</span> Your server, your data</h2>
+        <p><strong>Self-hosted data:</strong> Selene v1&rsquo;s database and logs live on your machine. We do not automatically receive, host, or back up your faction data, chat mirrors, rosters, or logs from your self-hosted instance.</p>
+        <p><strong>Support data:</strong> If you open a ticket or ask for help, you may choose to send us screenshots, logs, or config details (with tokens redacted). We&rsquo;ll use what you send only to provide support, fix bugs, and improve Selene, and we won&rsquo;t sell it. Don&rsquo;t send passwords or bot tokens — if you do by mistake, reset them and tell us so we can delete the message where we control it.</p>
+        <p><strong>Discord / Minecraft data:</strong> Selene processes messages, usernames, IDs, and gameplay-related events in the servers where you run it, as needed for its features. You are responsible for telling your members, where appropriate, that a bot is present and what it does, and for complying with any privacy obligations that apply to your community.</p>
+        <p>This section is a plain description of how v1 works — it is not a separate privacy policy for any website or hosted service. If we launch a hosted service or a website that collects personal data, we&rsquo;ll publish a privacy policy for it.</p>
+      </section>
+
+      <section id="s11">
+        <h2><span class="num">11</span> Updates &amp; support</h2>
+        <ul>
+          <li><strong>Support channel:</strong> Support is provided through the Selene Support Discord (<a href="https://discord.gg/hMFGu5USjs" target="_blank" rel="noopener">discord.gg/hMFGu5USjs</a>) — setup guide, FAQ, and ticket channels. Support is <strong>best-effort</strong>: we&rsquo;ll try to help promptly, but we don&rsquo;t guarantee response times, 24/7 availability, or that every issue can be resolved on your specific machine / network / server configuration.</li>
+          <li><strong>Map / season updates — $20 each:</strong> The $99 license does <strong>not</strong> include map or season updates. When a new map / season requires changes to Selene to keep Factions Core working, we&rsquo;ll offer that update for <strong>$20 USD per map update</strong>, paid separately before delivery of the updated build. Minor bug-fix patches for the map / version you&rsquo;re already on are not map updates and aren&rsquo;t charged as one. A map update covers the bot changes needed for that one new map / season — not new games, new major versions (e.g. a v2), or custom features.</li>
+          <li><strong>Bug fixes:</strong> We may release patches or new builds of v1. You&rsquo;re responsible for downloading and installing updates we provide and following any upgrade notes (including backing up your database first).</li>
+          <li><strong>No custom development:</strong> Your purchase does not include custom features, private modifications, or hosting, unless we agree to them separately in writing (which may be charged separately).</li>
+          <li><strong>End of life:</strong> We may discontinue v1 or replace it with a new major version. If we do, we&rsquo;ll announce it in the Support Discord. A new major version may be a separate purchase.</li>
+        </ul>
+      </section>
+
+      <section id="s12">
+        <h2><span class="num">12</span> Refunds</h2>
+        <p>Selene is a digital download delivered after payment verification. Please read the product description, requirements, and FAQ, and ask in the Discord before buying if you&rsquo;re unsure it fits your setup.</p>
+        <ul>
+          <li><strong>If we can&rsquo;t deliver:</strong> If we fail to deliver the Software after verified payment, you&rsquo;re entitled to a full refund for that order.</li>
+          <li><strong>If it won&rsquo;t run and we can&rsquo;t fix it:</strong> If Selene v1 will not run on a machine that meets the stated requirements, you contact support promptly, cooperate with troubleshooting (including following the setup guide), and we still cannot get it running within a reasonable time, contact us within <strong>14 days of delivery</strong> to request a refund. We&rsquo;ll review in good faith.</li>
+          <li><strong>Otherwise, sales are final</strong> after the download has been delivered — including for change of mind, buying for the wrong faction / server, your server banning an alt (see §8), a Minecraft server shutting down or changing rules, or features of third-party services changing.</li>
+          <li>Pilot licenses are free, so no refund applies.</li>
+          <li>Approved refunds go back to the original PayPal payment method where possible. Upon refund, your license for that purchase ends and you must delete the Software and all copies.</li>
+        </ul>
+        <p>Nothing in this section limits any non-waivable consumer rights you have under applicable law.</p>
+      </section>
+
+      <section id="s13">
+        <h2><span class="num">13</span> Warranty disclaimer</h2>
+        <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, SELENE IS PROVIDED <strong>&ldquo;AS IS&rdquo; AND &ldquo;AS AVAILABLE&rdquo;</strong> WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.</p>
+        <p>We don&rsquo;t warrant that Selene will be uninterrupted, error-free, secure, or compatible with every Discord server configuration, Minecraft server, map, season, client, or future third-party update. Minecraft Factions is competitive — <strong>we don&rsquo;t guarantee any in-game result</strong>, including FTop placement, value tracking accuracy against a server&rsquo;s own internal numbers at every moment, PvP outcomes, or raid / defence results.</p>
+      </section>
+
+      <section id="s14">
+        <h2><span class="num">14</span> Limitation of liability</h2>
+        <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW:</p>
+        <ul>
+          <li>We will not be liable for any indirect, incidental, special, consequential, or punitive damages, or for loss of profits, revenue, data, in-game items / value, accounts, or goodwill, arising from your use of (or inability to use) Selene — even if we were advised of the possibility;</li>
+          <li>Our total liability for any claim arising under or related to these Terms or Selene will not exceed the amount you actually paid us for the license giving rise to the claim (or, for a free pilot, $0);</li>
+          <li>Nothing in these Terms excludes liability that cannot be excluded by law.</li>
+        </ul>
+        <p>You agree to indemnify and hold us harmless from claims, damages, and reasonable expenses arising from your breach of these Terms, your violation of a third party&rsquo;s rules or rights, or your misuse of Selene or any alt / connector account.</p>
+      </section>
+
+      <section id="s15">
+        <h2><span class="num">15</span> Termination</h2>
+        <p>Your license continues until terminated. It terminates automatically if you breach these Terms — in particular §3 (License) or §9 (Acceptable Use).</p>
+        <p>We may suspend support access and / or terminate your license if you redistribute the Software, file a fraudulent chargeback, abuse support staff, or use Selene to seriously harm a third-party server or community. Where practical and the breach isn&rsquo;t serious or wilful, we&rsquo;ll give you a chance to cure it first.</p>
+        <p>On termination or refund, you must stop using Selene and delete the executable, sidecar files, and all copies (except a copy you must retain by law). Sections that by nature should survive — including §§3, 8, 13, 14, and 16 — survive termination.</p>
+        <p>You may stop using Selene at any time by deleting it; that does not by itself entitle you to a refund (see §12).</p>
+      </section>
+
+      <section id="s16">
+        <h2><span class="num">16</span> Changes, governing law &amp; other terms</h2>
+        <h3>Changes to these Terms</h3>
+        <p>We may update these Terms. The version posted with a new &ldquo;Last updated&rdquo; date in the Selene Discord / on this page is the current version. Material changes will be announced in the Support Discord. Changes don&rsquo;t retroactively take away a paid license you&rsquo;re using in compliance with the Terms in effect at purchase, except where a change is required by law or to address abuse / security — but continuing to download new builds or use support after a change means you accept the updated Terms for that use.</p>
+        <h3>Governing law</h3>
+        <p>These Terms are governed by the laws of the <strong>State of New York, USA</strong>, without regard to its conflict-of-law rules, except where applicable consumer law requires otherwise. You and we agree to try to resolve disputes informally via a support ticket first, for at least 14 days, before filing any formal claim.</p>
+        <h3>General</h3>
+        <ul>
+          <li><strong>Entire agreement:</strong> These Terms, plus the product description at checkout for your order, are the entire agreement for Selene v1 and replace prior oral or written understandings about v1.</li>
+          <li><strong>Severability:</strong> If any provision is held unenforceable, the rest remains in effect and the provision will be read as narrowly as needed to be enforceable.</li>
+          <li><strong>No waiver:</strong> Our failure to enforce a provision is not a waiver of it.</li>
+          <li><strong>Assignment:</strong> You may not assign your license or these Terms without our written consent. We may assign these Terms in connection with a sale or transfer of Selene, with notice in the Support Discord.</li>
+          <li><strong>Notices:</strong> Notices to you may be given via the Support Discord, the Discord account / email you used at purchase, or your support ticket. Notices to us go via §17.</li>
+        </ul>
+      </section>
+
+      <section id="s17">
+        <h2><span class="num">17</span> Contact</h2>
+        <p>Questions about these Terms, licensing for a second faction, or a refund request under §12:</p>
+        <ul>
+          <li><strong>Support Discord:</strong> <a href="https://discord.gg/hMFGu5USjs" target="_blank" rel="noopener">discord.gg/hMFGu5USjs</a> — open a ticket and include your PayPal transaction ID (never your password or bot token).</li>
+          <li><strong>Buy channel:</strong> See <strong>#buy-selene</strong> in that server for the current official payment link and steps.</li>
+        </ul>
+        <p style="margin-top:14px; font-size:14px; color:var(--muted)">This document is a plain-language terms template for an indie self-hosted bot. It is not legal advice. If Selene grows or you start selling into new regions, get a lawyer to review it.</p>
+      </section>
+    </article>
+  </div>
+
+  <div class="footer">
+    <div class="card">
+      <h3>Ready to buy, or stuck on setup?</h3>
+      <p>The official steps, the $99 link, and the updated setup guide all live in the Selene Discord — pay, ticket with your receipt, get the Buyer role and download.</p>
+      <a class="btn" href="https://discord.gg/hMFGu5USjs" target="_blank" rel="noopener">Join the Selene Discord →</a>
+    </div>
+    <div class="card">
+      <h3>Before you run it</h3>
+      <p>Deploy commands <em>before</em> you start the bot for the first time, name your env file exactly as the guide says, and back up <code>selene.db</code> before any update.</p>
+      <a class="btn secondary" href="#s6">Read §6 — Your responsibilities</a>
+    </div>
+  </div>
+
+  <p class="small">Selene v1 — Factions Core only. Not affiliated with Mojang, Microsoft, Minecraft, or Discord Inc.<br>© 2026 Selene. All rights reserved. · Terms v1.0 — November 10, 2026</p>
+</div>
+</body>
+</html>
